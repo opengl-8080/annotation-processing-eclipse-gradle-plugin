@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'com.gradle.publish:plugin-publish-plugin:0.9.2'
+        // classpath files('build/libs/ape-1.0.0.jar')
+    }
+}
+
+apply plugin: 'com.gradle.plugin-publish'
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+// apply plugin: 'com.github.opengl-BOBO.annotation-processing-eclipse'
+
+sourceCompatibility = '1.6'
+targetCompatibility = '1.6'
+compileGroovy.options.encoding = 'UTF-8'
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}
+
+jar.baseName = 'ape'
+
+version = '1.0.0'
+group = 'com.github.opengl-8080'
+
+pluginBundle {
+    website = 'https://github.com/opengl-8080/annotation-processing-eclipse-gradle-plugin'
+    vcsUrl = 'https://github.com/opengl-8080/annotation-processing-eclipse-gradle-plugin'
+    description = 'Gradle plugin that generate eclipse configuration for Pluggable Annotation Processing API.'
+    tags = ['Pluggable Annotation Processing API', 'Eclipse']
+
+    plugins {
+        ape {
+            id = 'com.github.opengl-BOBO.annotation-processing-eclipse'
+            displayName = 'Annotation Plugin Eclipse'
+        }
+    }
+}
+
+/*
+ape {
+    processorJarPattern = 'commons.*\\.jar'
+}
+*/
