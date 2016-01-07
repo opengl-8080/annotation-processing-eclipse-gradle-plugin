@@ -5,9 +5,9 @@ Gradle plugin that generate eclipse configuration for Pluggable Annotation Proce
 See [Gradle - Plugin: com.github.opengl-BOBO.annotation-processing-eclipse](https://plugins.gradle.org/plugin/com.github.opengl-BOBO.annotation-processing-eclipse)
 
 ## What is this?
-This plugin modify `eclipse` and `cleanEclipse` tasks.
+This plugin modifies `eclipse` and `cleanEclipse` tasks.
 
-This plugin enable **Annotation Processing** configurations for Eclipse.
+This plugin enables **Annotation Processing** configurations for Eclipse.
 
 ## Configuration
 **build.gradle**
@@ -20,9 +20,9 @@ ape {
 
 `processorJarPattern` option is regular expression to find a jar file including annotation processor class.
 
-This plugin find a jar file in `compile` configurations.
+This plugin finds a jar file in `compile` configurations.
 
-You can set closure that returns a `File` object into `processorJarPattern` option.
+You can set closure that returns a `File` object.
 
 ```groovy
 ape {
@@ -39,7 +39,7 @@ You run `eclipse` task then this task generates Annotation Processing configurat
 And this task also appends a source folder (`.apt_generated/`) into a `.classpath` file.
 
 ### cleanEclipse
-You run 'cleanEclipse' task then this task remove all generated files (`.factorypath`, `.settings/org.eclipse.jdt.apt.core.prefs`)
+You run 'cleanEclipse' task then this task removes all generated files (`.factorypath`, `.settings/org.eclipse.jdt.apt.core.prefs`)
 
 ## 日本語の説明
 ### インストール方法
